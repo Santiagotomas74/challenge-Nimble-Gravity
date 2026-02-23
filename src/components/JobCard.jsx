@@ -3,7 +3,7 @@ import { apiService } from '../services/api';
 
 const JobCard = ({ job, candidate }) => {
   const [repoUrl, setRepoUrl] = useState('');
-  const [status, setStatus] = useState('idle'); // idle, loading, success, error
+  const [status, setStatus] = useState('idle'); 
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {

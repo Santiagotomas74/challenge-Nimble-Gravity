@@ -1,7 +1,7 @@
 const BASE_URL = 'https://botfilter-h5ddh6dye8exb7ha.centralus-01.azurewebsites.net/api';
 
 export const apiService = {
-  // Step 2: Obtener datos del candidato
+
   getCandidate: async (email) => {
     const response = await fetch(`${BASE_URL}/candidate/get-by-email?email=${email}`);
     if (!response.ok) throw new Error('Error al obtener candidato');
@@ -9,25 +9,23 @@ export const apiService = {
     return response.json();
   },
 
-  // Step 3: Obtener lista de trabajos
+
   getJobs: async () => {
     const response = await fetch(`${BASE_URL}/jobs/get-list`);
     if (!response.ok) throw new Error('Error al obtener posiciones');
     return response.json();
   },
 
-  // Step 5: Enviar postulación
- // src/services/api.js
 
-// src/services/api.js
+
 
 applyToJob: async (data) => {
-  // Construimos el body exactamente como lo pide el error de la API
+ 
   const payload = {
     uuid: data.uuid,
     jobId: String(data.jobId),
     candidateId: String(data.candidateId),
-    applicationId: String(data.applicationId), // <-- ESTE ES EL QUE FALTABA
+    applicationId: String(data.applicationId),
     repoUrl: data.repoUrl
   };
 
